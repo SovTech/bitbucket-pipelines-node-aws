@@ -13,9 +13,10 @@ RUN apk add make && apk add curl && apk add openssh && apk add git && apk add jq
 RUN ln -sf /usr/share/zoneinfo/Etc/UTC /etc/localtime
 
 # Install aws-cli
-RUN apk -Uuv add groff less g++ python python-dev py-pip py-setuptools
-RUN pip install awscli
-RUN pip install awsebcli
+RUN apk -Uuv add groff less gcc python3 python3-dev libffi-dev
+
+RUN pip3 install awscli
+RUN pip3 install awsebcli
 RUN apk --purge -v del py-pip
 RUN rm /var/cache/apk/*
 
