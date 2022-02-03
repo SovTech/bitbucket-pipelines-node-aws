@@ -1,6 +1,8 @@
 # Version 1.0.1
 FROM node:lts-alpine
 
+ENV CRYPTOGRAPHY_DONT_BUILD_RUST=1
+
 # Install base and dev packages
 RUN apk update
 RUN apk add --no-cache --virtual .build-deps
@@ -14,6 +16,8 @@ RUN ln -sf /usr/share/zoneinfo/Etc/UTC /etc/localtime
 
 # Install aws-cli
 RUN apk -Uuv add groff less gcc python3 python3-dev libffi-dev musl-dev openssl-dev
+
+RUN python3 -m pip install --upgrade pip
 
 RUN pip3 install awscli
 RUN pip3 install awsebcli
