@@ -4,7 +4,7 @@ FROM node:fermium-alpine
 # Install base and dev packages
 RUN apk update
 RUN apk add --no-cache --virtual .build-deps
-RUN apk add bash rust cargo
+RUN apk add bash
 
 # Install build packages
 RUN apk add make && apk add curl && apk add openssh && apk add git && apk add jq
