@@ -7,7 +7,7 @@ RUN apk add --no-cache --virtual .build-deps
 RUN apk add bash
 
 # Install build packages
-RUN apk add make && apk add curl && apk add openssh && apk add git && apk add jq
+RUN apk add make && apk add curl && apk add openssh && apk add git && apk add jq && apk add rsync
 
 # Set timezone to UTC by default
 RUN ln -sf /usr/share/zoneinfo/Etc/UTC /etc/localtime
