@@ -1,5 +1,5 @@
 # Version 1.0.1
-FROM node:gallium-alpine
+FROM node:18.1-alpine
 
 # Install base and dev packages
 RUN apk update
