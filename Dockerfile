@@ -1,5 +1,5 @@
 # Version 1.0.1
-FROM node:fermium-alpine
+FROM node:gallium-alpine
 
 # Install base and dev packages
 RUN apk update
