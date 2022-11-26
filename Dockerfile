@@ -4,6 +4,7 @@ FROM node:18.1-alpine
 # Install base and dev packages
 RUN apk update
 RUN apk add --no-cache --virtual .build-deps
+RUN apk add --no-cache libc6-compat
 RUN apk add bash
 
 # Install build packages
