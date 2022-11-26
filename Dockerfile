@@ -14,9 +14,10 @@ RUN apk add make && apk add curl && apk add openssh && apk add git && apk add jq
 RUN ln -sf /usr/share/zoneinfo/Etc/UTC /etc/localtime
 
 # Install aws-cli
-RUN apk -Uuv add groff less gcc python3 py3-pip python3-dev libffi-dev musl-dev openssl-dev
+RUN apk -Uuv add groff less gcc python3 py3-pip python3-dev libffi-dev musl-dev openssl-dev cargo
 
-RUN pip3 install awscli
+RUN pip3 install awscli bcrypt
+RUN pip3 install --upgrade setuptools wheel
 RUN pip3 install awsebcli cryptography==3.3.1 --ignore-installed six
 RUN apk --purge -v del py-pip
 RUN rm /var/cache/apk/*
